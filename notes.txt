@@ -1,0 +1,40 @@
+Web component code 
+
+
+
+Normal Approach 
+
+
+
+==============================================Better Approach======================================
+
+
+import React from 'react'
+import { useState } from 'react'
+
+function Web() {
+ 
+  const [formData, setFormData] = useState({
+    name:"",
+    email:"",
+    password:""
+  });
+  
+  console.log(formData)
+
+  return (
+    <div className="flex flex-col gap-2 ">
+      <input onChange={(e)=>setFormData( {...formData ,name:e.target.value})} type="text"placeholder='Name' className ="border-2 w-70 bg-teal-600 text-black-50 p-3 rounded-md" />
+      <input onChange={(e)=>setFormData({...formData ,email:e.target.value})} type="text"placeholder='Email' className ="border-2 w-70 bg-teal-600 text-black-50 p-3 rounded-md" />
+      <input onChange={(e)=>setFormData({...formData ,password:e.target.value})} type="text"placeholder='Password' className ="border-2 w-70 bg-teal-600 text-black-50 p-3 rounded-md" />
+        
+          <button className="bg-red-600 w-70 text-white-50 p-3 rounded-md hover:bg-red-700">Submit</button>
+
+          {/* <h1>This is - {Name}</h1>
+          <h1>This is - {Email}</h1>
+          <h1>This is - {Password}</h1> */}
+    </div>
+  )
+}
+
+export default Web
